@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickPlay Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="game-controller.png" type="image/x-icon">
+</head>
+<body>
+  <header id="mainTitle">
+    <h1>QuickPlay Arcade</h1>
+    <p>Choose a game and let the fun begin!</p>
+  </header>
+
+  <main id="gameMenu">
+    <div class="game-option" data-game="tic-tac-toe">
+      <span class="emoji">❌⭕</span>
+      <h2>Tic Tac Toe</h2>
+    </div>
+    <div class="game-option" data-game="snake">
+      <span class="emoji">🐍</span>
+      <h2>Snake</h2>
+    </div>
+    <div class="game-option" data-game="rps">
+      <span class="emoji">✊🖐️✌️</span>
+      <h2>Rock Paper Scissors</h2>
+    </div>
+    <div class="game-option" data-game="wordle">
+      <span class="emoji">🧠🃏</span>
+      <h2>Wordle</h2>
+    </div>
+  </main>
+
+  <button id="goBack">← Go Back</button>
+
+  <section id="gameContainer">
+    <iframe id="gameFrame" src="" frameborder="0"></iframe>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

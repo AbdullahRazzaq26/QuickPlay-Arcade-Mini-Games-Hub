@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('font/LEMONMILK-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.rps-container {
+  background: rgba(25, 25, 40, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 0 30px rgba(118, 171, 174, 0.4);
+  padding: 30px 40px;
+  text-align: center;
+  width: 100%;
+  height: 88vh;
+  animation: fadeIn 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow {
+  box-shadow: 0 0 15px #1dd1a1, 0 0 25px #1dd1a1, 0 0 35px #1dd1a1;
+  border: 2px solid #1dd1a1;
+}
+
+.title {
+  font-family: 'Fira Code', monospace;
+  font-size: 2.8rem;
+  color: #76ABAE;
+  margin-bottom: 25px;
+}
+
+/* Game container */
+#imgsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.imgs {
+  width: 180px;
+  max-width: 100%;
+  border-radius: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(125, 95, 255, 0.25);
+}
+
+.imgs:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #7d5fff;
+  cursor: pointer;
+}
+
+/* Remove default button style */
+button {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+/* Scoreboard */
+#score {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  justify-content: center;
+
+}
+
+.playerScore p,
+.computerScore p {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 25px;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Message box */
+.msgBox {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  font-size: 35px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  max-width: 95%;
+  transition: 0.3s ease;
+}
+
+.msg {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #00FFFF;
+
+}
+
+/* Restart button */
+#restart {
+  background: #76ABAE;
+  color: #111;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 14px rgba(118, 171, 174, 0.45);
+}
+
+#restart:hover {
+  background: #61a0a3;
+  transform: scale(1.07);
+}
+
+
+
+/* Confetti Canvas */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ✅ MSG Popup Effect */
+.msg-popup {
+  animation: msgBounceFade 0.6s ease;
+}
+
+@keyframes msgBounceFade {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  40% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ✅ SCORE Pop Effect */
+.score-update {
+  animation: scoreHighlight 0.5s ease;
+}
+
+@keyframes scoreHighlight {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+
+  50% {
+    transform: scale(1.3);
+    color: #506EEC;
+    /* electric blue flash */
+  }
+
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #imgsContainer {
+    gap: 15px;
+  }
+
+  .imgs {
+    width: 120px;
+  }
+
+  #score {
+    flex-direction: column;
+    font-size: 17px;
+    gap: 20px;
+  }
+
+  .msgBox {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  #restart {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+#score,
+#playerScore,
+#computerScore {
+  display: flex;
+  gap: 50px;
+  font-size: 25px;
+  font-family: 'Lemon Milk', sans-serif;
+  justify-content: center;
+}

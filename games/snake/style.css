@@ -1,0 +1,165 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600&display=swap');
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+/* Main Game Container */
+.snake-container {
+  background: rgba(25, 25, 40, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 0 30px rgba(118, 171, 174, 0.4);
+  padding: 30px 40px;
+  text-align: center;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.snake-container h2 {
+  font-family: 'Fira Code', monospace;
+  font-size: 2.4rem;
+  color: #76ABAE;
+  margin-bottom: 25px;
+}
+
+/* Canvas Styling */
+canvas {
+  background-color: #111;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  border: 2px solid #76ABAE;
+  margin-bottom: 25px;
+  width: 900px;
+  height: 420px;
+  max-width: 100%;
+  transition: transform 0.3s;
+}
+
+/* Score Display */
+p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #ffffffcc;
+}
+
+#score {
+  font-weight: bold;
+  color: #76ABAE;
+}
+
+/* Buttons */
+button {
+  background: #76ABAE;
+  color: #111;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 14px rgba(118, 171, 174, 0.45);
+}
+
+button:hover {
+  background: #61a0a3;
+  transform: scale(1.07);
+}
+
+/* Game Over Overlay */
+.game-over-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 20, 0.92);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.game-over-screen h2 {
+  font-size: 3rem;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+
+#finalScore {
+  color: #76ABAE;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#playAgainBtn {
+  margin-top: 25px;
+}
+
+/* Scrollbar Styling for WebKit Browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #76ABAE;
+  border-radius: 8px;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 850px) {
+  canvas {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  .snake-container {
+    padding: 20px;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}

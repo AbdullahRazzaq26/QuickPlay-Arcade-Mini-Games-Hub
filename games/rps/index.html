@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rps Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="rps-container">
+        <h1 class="title">Rock Paper Scissors</h1>
+
+        <div id="imgsContainer">
+            <button><img class="imgs" src="imgs/paper.png" alt="" width="350px" id="Paper"></button>
+            <button><img class="imgs" src="imgs/rock.png" alt="" width="350px" id="Rock"></button>
+            <button><img class="imgs" src="imgs/scissors.png" alt="" width="350px" id="Scissors"></button>
+        </div>
+        <div id="score">
+            <div class="playerScore">
+                <p id="playerScore">You = 0</p>
+            </div>
+            <div class="computerScore">
+                <p id="computerScore">Computer = 0</p>
+            </div>
+        </div>
+        <div class="msgBox">
+            <p class="msg">Pick Your Move From Above</p>
+            <button id="restart">Restart Game</button>
+        </div>
+        <canvas id="confetti"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

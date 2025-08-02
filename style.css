@@ -1,0 +1,161 @@
+/* === Reset & Base === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === Header === */
+header {
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #76ABAE;
+}
+
+header p {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* === Game Menu === */
+#gameMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Each game card */
+.game-option {
+  width: 300px;
+  aspect-ratio: 1 / 1;
+  background: rgba(22, 22, 45, 0.75);
+  border: 2px solid #76ABAE;
+  border-radius: 18px;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(118, 171, 174, 0.3);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #76ABAE;
+  background-color: rgba(30, 30, 60, 0.9);
+}
+
+.game-option .emoji {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.game-option h2 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+/* === Game Container === */
+#gameContainer {
+  display: none;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* === iFrame === */
+#gameFrame {
+  width: 100%;
+  height: 90vh;
+  border: none;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.9);
+  outline: 2px solid #76ABAE;
+  transition: transform 0.3s;
+}
+
+#gameFrame:hover {
+  transform: scale(1.003);
+}
+
+/* === Go Back Button === */
+#goBack {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 0.6rem 1.2rem;
+  background-color: #76ABAE;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #76ABAE;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: none;
+}
+
+#goBack:hover {
+  background-color: #5aa6a9;
+  box-shadow: 0 0 15px #76ABAE;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 768px) {
+  .game-option {
+    width: 140px;
+    padding: 1.5rem;
+  }
+
+  .game-option .emoji {
+    font-size: 1.8rem;
+  }
+
+  #goBack {
+    font-size: 0.65rem;
+    padding: 0.5rem 1rem;
+    top: 10px;
+    left: 10px;
+  }
+
+  #gameFrame {
+    height: 75vh;
+  }
+}
