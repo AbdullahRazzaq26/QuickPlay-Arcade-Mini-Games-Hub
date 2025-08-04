@@ -6,16 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/game.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="snake-container">
-        <h2>🐍 Snake Game</h2>
-        <canvas id="gameCanvas" width="900" height="420"></canvas>
-        <p>Score: <span id="score">0</span></p>
-        <button id="restartBtn">Start Game</button>
+        <div class="game-area">
+            <!-- MAIN GAME -->
+            <div class="game-main">
+                <h2>🐍 Snake Game</h2>
+                <p class="high-score">High Score: <span id="highScore">0</span></p>
+                <canvas id="gameCanvas" width="900" height="420"></canvas>
+                <p>Score: <span id="score">0</span></p>
+                <div class="btns">
+                    <button id="soundToggleBtn">🔊 Sound</button>
+                    <button id="pauseBtn">Pause</button>
+                    <button id="restartBtn">Start Game</button>
+                </div>
+            </div>
+        </div>
+        <aside class="scoreboard">
+            <h3>📝 Last 5 Scores</h3>
+            <ul id="scoreList"></ul>
+        </aside>
     </div>
-
 
     <div class="game-over-screen" id="gameOverScreen">
         <h2>💀 Game Over!</h2>
@@ -23,8 +37,11 @@
         <button id="playAgainBtn">Play Again</button>
     </div>
 
-    <audio id="eatSound" src="snake-eat.wav" preload="auto"></audio>
-    <audio id="dieSound" src="snake-die.wav" preload="auto"></audio>
+
+    <audio id="eatSound" src="assets/snake-eat.wav" preload="auto"></audio>
+    <audio id="dieSound" src="assets/snake-die.wav" preload="auto"></audio>
+    <audio id="bgMusic" src="assets/bg-music.mp3" preload="auto" loop></audio>
+
 
     <script src="script.js"></script>
 </body>
